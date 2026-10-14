@@ -12,7 +12,6 @@ A collection of **pure-shell** GitHub Actions built on the [x-cmd shell library]
 | --- | --- | --- |
 | [`x-cmd`](https://github.com/x-cmd-action/x-cmd) | Install x-cmd into `~/.x-cmd.root/` so `x ai`, `x gh`, etc. are available. Single-purpose, idempotent. | ![v1](https://img.shields.io/badge/v1-stable-green) |
 | [`this-repo`](https://github.com/x-cmd-action/this-repo) | Minimal checkout: clone the triggering repo into `$GITHUB_WORKSPACE`. 6 inputs. | ![v1](https://img.shields.io/badge/v1-stable-green) |
-| [`checkout`](https://github.com/x-cmd-action/checkout) | Full `git checkout`: 22 inputs, 1:1 with `actions/checkout@v4` + 3 x-cmd enhancements (SSH, sparse, filter, …). | ![v1](https://img.shields.io/badge/v1-stable-green) |
 | [`ssh`](https://github.com/x-cmd-action/ssh) | Pure-shell `ssh-agent` setup + `known_hosts` + key add. | ![v1](https://img.shields.io/badge/v1-stable-green) |
 | [`docker`](https://github.com/x-cmd-action/docker) | Pure-shell `docker login` + `buildx init`. | ![v1](https://img.shields.io/badge/v1-stable-green) |
 | [`gitconfig`](https://github.com/x-cmd-action/gitconfig) | Pure-shell **global** git config (name/email + `[include]` for config file). | ![v1](https://img.shields.io/badge/v1-stable-green) |
@@ -21,6 +20,7 @@ A collection of **pure-shell** GitHub Actions built on the [x-cmd shell library]
 
 | Action | Description | Latest |
 | --- | --- | --- |
+| [`checkout`](https://github.com/x-cmd-action/checkout) | Full `git checkout`: 22 inputs, 1:1 with `actions/checkout@v4` + 3 x-cmd enhancements (SSH, sparse, filter, …). | ![v1](https://img.shields.io/badge/v1-stable-green) |
 | [`gitmirror`](https://github.com/x-cmd-action/gitmirror) | Sync repos across GitHub ↔ Gitee ↔ Codeberg. | ![v1](https://img.shields.io/badge/v1-stable-green) |
 
 ### AI toolkit — automated Issue & PR maintenance

@@ -12,7 +12,6 @@
 | --- | --- | --- |
 | [`x-cmd`](https://github.com/x-cmd-action/x-cmd) | 装 x-cmd 到 `~/.x-cmd.root/`,之后就能用 `x ai`、`x gh` 等命令。单一职责、幂等。 | ![v1](https://img.shields.io/badge/v1-stable-green) |
 | [`this-repo`](https://github.com/x-cmd-action/this-repo) | 最精简 checkout:把触发 repo 克隆到 `$GITHUB_WORKSPACE`。6 个 input。 | ![v1](https://img.shields.io/badge/v1-stable-green) |
-| [`checkout`](https://github.com/x-cmd-action/checkout) | 完整版 `git checkout`:22 个 input,与 `actions/checkout@v4` 1:1 对齐 + 3 个 x-cmd 增强(SSH、sparse、filter 等)。 | ![v1](https://img.shields.io/badge/v1-stable-green) |
 | [`ssh`](https://github.com/x-cmd-action/ssh) | 纯 shell `ssh-agent` 配置 + `known_hosts` + key add。 | ![v1](https://img.shields.io/badge/v1-stable-green) |
 | [`docker`](https://github.com/x-cmd-action/docker) | 纯 shell `docker login` + `buildx init`。 | ![v1](https://img.shields.io/badge/v1-stable-green) |
 | [`gitconfig`](https://github.com/x-cmd-action/gitconfig) | 纯 shell **全局** git config(name/email + `[include]` 引入 config 文件)。 | ![v1](https://img.shields.io/badge/v1-stable-green) |
@@ -21,6 +20,7 @@
 
 | Action | 说明 | 最新版 |
 | --- | --- | --- |
+| [`checkout`](https://github.com/x-cmd-action/checkout) | 完整版 `git checkout`:22 个 input,与 `actions/checkout@v4` 1:1 对齐 + 3 个 x-cmd 增强(SSH、sparse、filter 等)。 | ![v1](https://img.shields.io/badge/v1-stable-green) |
 | [`gitmirror`](https://github.com/x-cmd-action/gitmirror) | 跨平台同步 repo(GitHub ↔ Gitee ↔ Codeberg)。 | ![v1](https://img.shields.io/badge/v1-stable-green) |
 
 ### AI 工具集 —— 自动维护 Issues / PR
