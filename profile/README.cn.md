@@ -168,6 +168,22 @@ AI 工具集是这样:
 
 ## FAQ
 
+### AI token 怎么配?支持哪些 provider?
+
+所有调用 AI 的子命令都从环境变量读 token,在 workflow 里用 `env:` + secrets 传入即可,如 `MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}`。x-cmd 按 key 自动识别 provider —— 支持 `MINIMAX_API_KEY`、`DEEPSEEK_API_KEY`、`GEMINI_API_KEY`、`XAI_API_KEY`、`MISTRAL_API_KEY`、`MOONSHOT_API_KEY`、`OPENAI_API_KEY` 等。例外:`ai/reply` 用固定文案回复时、`ai/commit` 的 `check` 模式只做格式校验时,不需要 token。
+
+### AI 会直接改我的仓库、自动 push 到 main 吗?
+
+不会。所有 AI 输出都是**草稿**:issue/PR 上的评论、建议的 labels、写到工作区的文件。没有任何 action 会自主提交或推送 —— 合不合、改不改,由人决定。
+
+### 只能用在 GitHub Actions 里吗?
+
+Action 是 GitHub Actions 的封装,但核心逻辑是 x-cmd 命令:本地装一个 x-cmd,`x ai triage`、`x ai review` 等都能直接跑。可以在本地调通 prompt 和效果,再上 CI。
+
+### ai/triage 建议的 label 在仓库里不存在怎么办?
+
+会自动创建缺失的 label 再贴上,不需要事先手工建标签。
+
 ### 为什么要鼓励用 shell / Node.js / Python 写流程,而不是用 `action.yml` 组合?
 
 可重复的运维活在可移植的 shell / Python / JS 脚本里(`x gitb backup`、`x gh`、`x ws` 等) —— 这些脚本你在笔记本、cron、任何 CI 上都能跑。这里的 actions 是 **那些脚本的薄包装**,不是只能在 GitHub Actions 里跑的黑盒逻辑。workflow 离开 GitHub,这些工作跟着走。

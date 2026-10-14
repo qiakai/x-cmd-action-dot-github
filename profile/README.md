@@ -168,6 +168,22 @@ For a new AI sub-command, instead add it to `x-cmd-action/ai/<subname>/` and lin
 
 ## FAQ
 
+### How do I configure the AI token? Which providers are supported?
+
+Every AI-calling sub-command reads its token from an environment variable — pass it via `env:` + secrets, e.g. `MINIMAX_API_KEY: ${{ secrets.MINIMAX_API_KEY }}`. x-cmd detects the provider from the key — supported: `MINIMAX_API_KEY`, `DEEPSEEK_API_KEY`, `GEMINI_API_KEY`, `XAI_API_KEY`, `MISTRAL_API_KEY`, `MOONSHOT_API_KEY`, `OPENAI_API_KEY`, etc. Exceptions: `ai/reply` with a static comment and `ai/commit` in `check` mode (format validation only) don't need a token.
+
+### Will the AI modify my repo or push to main on its own?
+
+No. All AI output is a **draft**: a comment on the issue/PR, suggested labels, a file written to the workspace. No action commits or pushes autonomously — a human decides what lands.
+
+### Can I use this outside GitHub Actions?
+
+The actions are GitHub Actions wrappers, but the core logic is x-cmd commands: with x-cmd installed locally, `x ai triage`, `x ai review`, etc. run directly. Tune prompts and behavior locally before wiring up CI.
+
+### What if a label suggested by ai/triage doesn't exist in the repo?
+
+It's created automatically before being applied — no need to pre-create labels.
+
 ### Why shell / Node.js / Python for workflow logic, instead of composing `action.yml`?
 
 Recurring ops work lives in portable shell / Python / JS scripts (`x gitb backup`, `x gh`, `x ws`, …) — scripts you can run on your laptop, on a cron, on any CI. These actions are **thin wrappers around those scripts**, not opaque GitHub-Actions-only logic. When the workflow moves off GitHub, the work moves with it.
