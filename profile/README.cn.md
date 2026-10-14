@@ -1,12 +1,12 @@
 # x-cmd-action
 
-把 [x-cmd shell 库](https://github.com/x-cmd/x-cmd) 带进 GitHub Actions 的一套 **纯 shell** action 合集:既能「把 runner 配成跟笔记本一样」,也能「用 AI 自动维护 Issues / PR」。无 Node.js 依赖,每个 action 一行 `uses:` 即可接入。
+把 [x-cmd shell 库](https://github.com/x-cmd/x-cmd) 带进 GitHub Actions 的一套 **纯 shell** action 合集:帮你装好 runner 环境(装 x-cmd、clone 仓库、配好 git/ssh/docker),也能用 AI 自动维护 Issues / PR。无 Node.js 依赖,每个 action 一行 `uses:` 即可接入。
 
 [English](./README.md)
 
 ## 这里有什么
 
-### 配环境 —— 把 runner 配成跟笔记本一样
+### 环境准备 —— 装 x-cmd、clone 仓库、配好 git / ssh / docker
 
 | Action | 说明 | 最新版 |
 | --- | --- | --- |
@@ -41,7 +41,7 @@
 
 ## 快速案例
 
-把 runner 配成跟笔记本一样:
+装好基础环境(x-cmd、仓库、git 身份):
 
 ```yaml
 steps:

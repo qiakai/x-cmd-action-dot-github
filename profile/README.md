@@ -1,12 +1,12 @@
 # x-cmd-action
 
-A collection of **pure-shell** GitHub Actions built on the [x-cmd shell library](https://github.com/x-cmd/x-cmd): wire up the runner like a laptop, and let AI take over the repetitive maintenance work on Issues & PRs. No Node.js dependencies — every action is one `uses:` line.
+A collection of **pure-shell** GitHub Actions built on the [x-cmd shell library](https://github.com/x-cmd/x-cmd): set up the runner (install x-cmd, clone the repo, configure git/ssh/docker), and let AI take over the repetitive maintenance work on Issues & PRs. No Node.js dependencies — every action is one `uses:` line.
 
 [中文](./README.cn.md)
 
 ## What's here
 
-### Wire up the runner like a laptop
+### Runner setup — install x-cmd, clone the repo, configure git / ssh / docker
 
 | Action | Description | Latest |
 | --- | --- | --- |
@@ -41,7 +41,7 @@ Cross-run memory (so `ai/review` can recall what `ai/triage` said on the linked 
 
 ## Quick examples
 
-Wire up the runner like a laptop:
+Set up the basics (x-cmd, repo, git identity):
 
 ```yaml
 steps:
